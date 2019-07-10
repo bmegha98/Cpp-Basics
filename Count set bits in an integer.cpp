@@ -22,6 +22,15 @@ unsigned int RecCountSetBits(int n)
 	
 	return (n&1)+RecCountSetBits(n>>1);
 }
+
+unsigned int Count(int n)
+{
+	if(n<=0)
+	return 0;
+	
+	return (n % 2 == 0? 0 : 1) + Count(n/2);
+}
+
 int main()
 {
 	int n;
