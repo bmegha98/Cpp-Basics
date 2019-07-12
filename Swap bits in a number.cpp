@@ -29,6 +29,11 @@ int SwapBits(int num,int p1,int p2, int n)
 		
 		/* Xor the 'Xor' with the original number so that the two sets are swapped */
 		unsigned int res = (num ^ Xor);
+		/*
+			int x = x^y;
+			int y = x^y;
+			int x = y^x;
+		*/
 		
 		return res;	
  } 
