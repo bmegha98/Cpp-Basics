@@ -7,40 +7,30 @@ You are given an array of N integers, A1, A2 ,…, AN. Find sum of f(Ai, Aj) for
 answer modulo 109+7.
 */
 
-// TLE
-/*
-#include<iostream>
+#include<bits/stdc++.h>
+#define MOD 1000000007
 using namespace std;
 
-int f(int n)
-{
-    if(n == 0)
-    return 0;
-    
-    return (n&1)+f(n>>1);
-    
+int main(){
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int N;
+        cin>>N;
+        int A[N];
+        for(int i=0;i<N;i++)
+         cin>>A[i];
+        int s = 0;
+        for(int i=0;i<N;i++)
+          for(int j = i+1;j<N;j++)
+	     if(A[i]!=A[j])
+             s = s+2*(__builtin_popcount (A[i]^A[j]));
+        
+        cout<<s % MOD<<endl;
+        
+    }
 }
-int main()
- {
-	int T;
-	cin>>T;
-	while(T--)
-	{
-	    int n,S=0;
-	    cin>>n;
-	    int A[n];
-	    for(int i=0;i<n;i++)
-	      cin>>A[i];
-	    for(int i=0;i<n;i++)
-	    {
-	        for(int j=0;j<n;j++)
-	          S+= f(A[i]^A[j]);
-	    }
-	    cout<<S<<endl;
-	}
-	return 0;
-}
-*/
 
 #include<bits/stdc++.h>
 #define MOD 1000000007
